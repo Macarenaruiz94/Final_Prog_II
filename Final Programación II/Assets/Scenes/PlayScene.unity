@@ -675,9 +675,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcf2892e687373488b7e0500bb33289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab1: {fileID: 8028874489183273940, guid: e446b7e392dbed24fb1d4a3dda94a797, type: 3}
-  prefab2: {fileID: 4311577918307920521, guid: e306113f098e15c41b27d2c3d471ef0d, type: 3}
-  prefab3: {fileID: 6794057228482770408, guid: cea6a22f4a8332347a92878090024125, type: 3}
+  objects:
+  - prefab: {fileID: 8028874489183273940, guid: e446b7e392dbed24fb1d4a3dda94a797, type: 3}
+    spawnChance: 0.8
+  - prefab: {fileID: 4311577918307920521, guid: e306113f098e15c41b27d2c3d471ef0d, type: 3}
+    spawnChance: 0.6
+  - prefab: {fileID: 6794057228482770408, guid: cea6a22f4a8332347a92878090024125, type: 3}
+    spawnChance: 0.7
+  minSpawnRate: 1
+  maxSpawnRate: 2
 --- !u!4 &713343984
 Transform:
   m_ObjectHideFlags: 0
@@ -686,7 +692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713343982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.93, y: -3.31, z: -9.07}
+  m_LocalPosition: {x: 9.93, y: -0.37, z: -13.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
