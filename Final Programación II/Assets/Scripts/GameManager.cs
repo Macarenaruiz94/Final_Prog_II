@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public struct SpawnObjects
     {
-        
+        public GameObject prefab;
+        [Range(0f, 1f)]
+        public float spawnChance;
     }
 
-    // Update is called once per frame
-    void Update()
+    public SpawnObjects[] objects;
+
+    public float minSpawnRate = 1f;
+    public float maxSpawnRate = 2f;
+
+    private void OnEnable()
     {
-        
+        Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+    private void Spawn()
+    {
+        float spawnChance = Random.value;
+
+        foreach (var obj in objects)
+        {
+            if (spawnChance < obj.spawnChance)
+            {
+                GameObject obstacle = Instantiate(obj.prefab);
+                obstacle.transform.position += transform.position;
+                break;
+            }
+
+            spawnChance -= obj.spawnChance;
+            Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
+        }
     }
 }

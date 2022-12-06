@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8028874489183273938}
   - component: {fileID: 8028874489183273939}
   - component: {fileID: 8028874489183273937}
+  - component: {fileID: -5782159864018389412}
+  - component: {fileID: 8780992561524081425}
   m_Layer: 0
   m_Name: tree1
   m_TagString: Untagged
@@ -99,3 +101,40 @@ CapsuleCollider2D:
   m_Offset: {x: 0.06713787, y: -0.03356898}
   m_Size: {x: 0.9536217, y: 1.557862}
   m_Direction: 0
+--- !u!114 &-5782159864018389412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028874489183273940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b951f4f5695004498e2a13c208cb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  currentSpeed: 0
+  maxSpeed: 5
+  multiplierSpeed: 0.001
+--- !u!50 &8780992561524081425
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028874489183273940}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
