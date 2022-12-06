@@ -4,44 +4,45 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct SpawnObjects
+    public GameObject prefab1;
+    public GameObject prefab2;
+    public GameObject prefab3;
+
+    private float timer;
+    private float MaxTime;
+
+    int chooseObstacle;
+
+    void Start()
     {
-        public GameObject prefab;
-        [Range(0f, 1f)]
-        public float spawnChance;
+        MaxTime = 3f;
     }
 
-    public SpawnObjects[] objects;
-
-    public float minSpawnRate = 1f;
-    public float maxSpawnRate = 2f;
-
-    private void OnEnable()
+    void Update()
     {
-        Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
-    }
-
-    private void OnDisable()
-    {
-        CancelInvoke();
-    }
-
-    private void Spawn()
-    {
-        float spawnChance = Random.value;
-
-        foreach (var obj in objects)
+        timer += Time.deltaTime;
+        if (timer >= MaxTime)
         {
-            if (spawnChance < obj.spawnChance)
-            {
-                GameObject obstacle = Instantiate(obj.prefab);
-                obstacle.transform.position += transform.position;
-                break;
-            }
+            generateObstacle();
+            randomMaxTime();
+            timer = 0;
 
-            spawnChance -= obj.spawnChance;
-            Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
         }
+
+
+    }
+
+    void randomMaxTime()
+    {
+        MaxTime = Random.Range(1, 4);
+    }
+
+    void generateObstacle()
+    {
+        chooseObstacle = Random.Range(1, 4);
+        if (chooseObstacle == 1) { Instantiate(prefab1); }
+        if (chooseObstacle == 2) { Instantiate(prefab2); }
+        if (chooseObstacle == 3) { Instantiate(prefab3); }
+
     }
 }

@@ -354,7 +354,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe876ee0e5685c46bce337d53a1aecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 300
+  jumpForce: 500
 --- !u!1 &242375463
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,11 +675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcf2892e687373488b7e0500bb33289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacles:
-  - {fileID: 6794057228482770408, guid: cea6a22f4a8332347a92878090024125, type: 3}
-  - {fileID: 3698545484870813304, guid: 3baf91c06b3e21a4e8d95c957671a09e, type: 3}
-  - {fileID: 8028874489183273940, guid: e446b7e392dbed24fb1d4a3dda94a797, type: 3}
-  - {fileID: 4311577918307920521, guid: e306113f098e15c41b27d2c3d471ef0d, type: 3}
+  prefab1: {fileID: 8028874489183273940, guid: e446b7e392dbed24fb1d4a3dda94a797, type: 3}
+  prefab2: {fileID: 4311577918307920521, guid: e306113f098e15c41b27d2c3d471ef0d, type: 3}
+  prefab3: {fileID: 6794057228482770408, guid: cea6a22f4a8332347a92878090024125, type: 3}
 --- !u!4 &713343984
 Transform:
   m_ObjectHideFlags: 0
@@ -688,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713343982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.79, y: -4.26, z: -9.07}
+  m_LocalPosition: {x: 9.93, y: -3.31, z: -9.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
