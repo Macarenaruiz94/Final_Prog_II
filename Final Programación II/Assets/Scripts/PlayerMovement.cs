@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Time.timeScale = 1f;
     }
 
     void Update()
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Death");
             GameManager.Instance.ShowGameOver();
+            Time.timeScale = 0f;
 
         }
     }

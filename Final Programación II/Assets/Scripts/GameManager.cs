@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverText;
-    [SerializeField] private GameObject player;
 
     private float score;
     private float highScore;
@@ -32,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0f;
         UpdateHighScore();
+        //Time.timeScale = 1f;
     }
     private void Update()
     {
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.SetActive(true);
         UpdateHighScore();
-        Destroy(player);
+        //Time.timeScale = 0f;
 
     }
 
