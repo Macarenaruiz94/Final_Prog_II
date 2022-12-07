@@ -39,5 +39,11 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            animator.SetTrigger("Death");
+            Destroy(this);
+        }
     }
 }
