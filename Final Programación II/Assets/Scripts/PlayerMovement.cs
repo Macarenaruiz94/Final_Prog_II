@@ -43,7 +43,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             animator.SetTrigger("Death");
+            GameManager.Instance.ShowGameOver();
             Destroy(this);
+
         }
     }
 }

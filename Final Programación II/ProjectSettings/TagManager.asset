@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - DeathZone
+  - enemy
   layers:
   - Default
   - TransparentFX

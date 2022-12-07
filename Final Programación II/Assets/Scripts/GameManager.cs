@@ -1,90 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    /*public GameObject prefab1;
-    public GameObject prefab2;
-    public GameObject prefab3;
+    [SerializeField] private GameObject gameOverText;
 
-    private float timer;
-    private float MaxTime;
+    public static GameManager Instance { get; private set; }
 
-    int chooseObstacle;
-
-    void Start()
+    private void Awake()
     {
-        MaxTime = 3f;
-    }
-
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= MaxTime)
+        if (Instance != null && Instance != this)
         {
-            generateObstacle();
-            randomMaxTime();
-            timer = 0;
-
-        }
-
-
-    }
-
-    void randomMaxTime()
-    {
-        MaxTime = Random.Range(1, 4);
-    }
-
-    void generateObstacle()
-    {
-        chooseObstacle = Random.Range(1, 4);
-        if (chooseObstacle == 1) { Instantiate(prefab1); }
-        if (chooseObstacle == 2) { Instantiate(prefab2); }
-        if (chooseObstacle == 3) { Instantiate(prefab3); }
-
-    }*/
-
-    [System.Serializable]
-    public struct SpawnableObject
-    {
-        public GameObject prefab;
-        [Range(0f, 1f)]
-        public float spawnChance;
-    }
-
-    public SpawnableObject[] objects;
-
-    public float minSpawnRate = 1f;
-    public float maxSpawnRate = 2f;
-
-    private void OnEnable()
-    {
-        Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
-    }
-
-    private void OnDisable()
-    {
-        CancelInvoke();
-    }
-
-    private void Spawn()
-    {
-        float spawnChance = Random.value;
-
-        foreach (var obj in objects)
+            Destroy(this);
+        } else
         {
-            if (spawnChance < obj.spawnChance)
-            {
-                GameObject obstacle = Instantiate(obj.prefab);
-                obstacle.transform.position += transform.position;
-                break;
-            }
-
-            spawnChance -= obj.spawnChance;
+            Instance = this;
         }
+    }
 
-        Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
+    public void ShowGameOver()
+    {
+        gameOverText.SetActive(true);
     }
 }
