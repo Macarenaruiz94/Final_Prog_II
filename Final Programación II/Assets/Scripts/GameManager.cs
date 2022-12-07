@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0f;
         UpdateHighScore();
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
     }
     private void Update()
     {
@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.SetActive(true);
         UpdateHighScore();
-        //Time.timeScale = 0f;
 
     }
 
