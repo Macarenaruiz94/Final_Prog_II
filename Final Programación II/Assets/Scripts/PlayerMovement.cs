@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Death");
             GameManager.Instance.ShowGameOver();
-            Destroy(this);
 
         }
     }
