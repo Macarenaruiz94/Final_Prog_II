@@ -163,7 +163,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 32cd699e11bf8ce45b30684a7d67f351, type: 3}
-    m_FontSize: 30
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -174,15 +174,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game design
-
-    dev
-
-    audio
-
-    game art
-
-    font'
+  m_Text: "Game development by maaq\n\nPlayer character by Luck\u200B ( license CC0
+    1.0 Universal\u200B\u200B)\r\nAssets by craftpix.net\u200B & by Kacper Wo\u017Aniak\u200B
+    (license CC BY 4.0\u200B\u200B)\u200B\r & by GX310\nBackground by Eder Muniz\u200B\nFont
+    by Void\u200B (Francisco Beltr\xE1n\u200B; license CC BY 4.0\u200B)\u200B\u200B\nAudio
+    by jhaeka"
 --- !u!222 &10440334
 CanvasRenderer:
   m_ObjectHideFlags: 0
