@@ -116,7 +116,7 @@ MonoBehaviour:
   speed: 3
   currentSpeed: 0
   maxSpeed: 5
-  multiplierSpeed: 0.001
+  multiplierSpeed: 0.005
 --- !u!50 &5997910940322471455
 Rigidbody2D:
   serializedVersion: 4
