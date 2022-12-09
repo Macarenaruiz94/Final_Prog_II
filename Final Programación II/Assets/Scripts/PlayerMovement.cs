@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Death");
             GameManager.Instance.ShowGameOver();
-            Time.timeScale = 0f;
             AudioListener.pause = true;
 
         }

@@ -22,5 +22,10 @@ public class ObstaclesMovement : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.CompareTag("Player"))
+        {
+            speed = 0f; ;
+        }
     }
 }

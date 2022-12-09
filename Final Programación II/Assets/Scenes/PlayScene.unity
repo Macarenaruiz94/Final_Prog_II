@@ -397,7 +397,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &190813482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 87305656}
+  enemySpawn: {fileID: 713343982}
   scoreText: {fileID: 1656826009}
   highScoreText: {fileID: 1934316444}
 --- !u!20 &519420031

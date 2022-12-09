@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverText;
+    [SerializeField] private GameObject enemySpawn;
 
     private float score;
     private float highScore;
-
     private float timer;
+    
     [SerializeField] private Text scoreText;
     [SerializeField] private Text highScoreText;
 
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        Destroy(enemySpawn);
         gameOverText.SetActive(true);
         UpdateHighScore();
 
