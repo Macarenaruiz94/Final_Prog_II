@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         Destroy(enemySpawn);
         gameOverText.SetActive(true);
         UpdateHighScore();
+        StartCoroutine("StopGame");
 
     }
 
@@ -64,5 +65,11 @@ public class GameManager : MonoBehaviour
         }
 
         highScoreText.text = Mathf.RoundToInt(highScore).ToString("D5");
+    }
+
+    IEnumerator StopGame()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0f;
     }
 }
